@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_detail_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@android:color/holo_green_dark"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="190dp"
+            android:layout_height="281dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_title"
+            android:layout_marginLeft="8dp" />
+
+        <TextView
+            android:id="@+id/release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="@+id/user_rating"
+            app:layout_constraintStart_toStartOf="@+id/user_rating"
+            app:layout_constraintTop_toBottomOf="@+id/movie_title" />
+
+        <TextView
+            android:id="@+id/user_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="35dp"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/release_date" />
+
+        <TextView
+            android:id="@+id/synopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:scrollbars="vertical"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <CheckBox
+            android:id="@+id/checkbox_favorite"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:button="@drawable/custom_favorite_checkbox"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintLeft_toLeftOf="@+id/user_rating"
+            app:layout_constraintStart_toStartOf="@+id/user_rating"
+            app:layout_constraintTop_toBottomOf="@+id/user_rating" />
+
+        <TextView
+            android:id="@+id/trailers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Trailers :"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/synopsis" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/trailer_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trailers" />
+
+
+        <TextView
+            android:id="@+id/reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Reviews :"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trailer_recycler_view" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/review_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reviews" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>
